@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Weather App
+        </title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="./src/index.js"></script>
+        <link rel="stylesheet" href="./styles/css/styles.css">
+    </head>
+    <body>
+        <h2>Weather Dashboard</h2>
+        <div id="tempWrapper">
+            <div id="tempOverview">
+                <h4>Now</h4>
+                <p id="tempCurrent">&deg;</p>
+                <div id="tempMinMaxWrapper">
+                    <span id="maxTemp">High</span>
+                    <span id="minTemp">&bull; Low</span>
+                </div>
+            </div>
+            <div id="feelsLikeOverview">
+                <p id="description"></p>
+                <p id="tempFeelsLike">Feels like</p>
+            </div>
+        </div>
+        <div id="generalOverview">
+            <h4>Current conditions</h4>
+            <div id="panelsWrapper">
+                <div id="windPanel">
+                    <p>Wind</p>
+                    <p id="windSpeed"></p>
+                    <p id="windDeg"></p>
+                </div>
+                <div id="humidityPanel">
+                    <p>Humidity</p>
+                    <p id="humidity"></p>
+                </div>
+                <div id="pressurePanel">
+                    <p>Pressure</p>
+                    <p id="pressure"></p>
+                </div>
+                <div id="visibilityPanel">
+                    <p>Visibility</p>
+                    <p id="visibility"></p>
+                </div>
+            </div>
+        </div>
+        <button id="refreshButton" type="button">Refresh</button>
+    </body>
+</html>

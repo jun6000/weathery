@@ -1,0 +1,103 @@
+@use "sass:map";
+
+$font-stack: Arial, sans-serif;
+$font-sizes: (
+    "tiny": 0.8em,
+    "small": 1em,
+    "medium": 1.4em,
+    "large": 2em,
+);
+$font-color: #c7d6f0;
+
+$primary-color: #304e88;
+$secondary-color: #182f57;
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-stack;
+    color: $font-color;
+    background-color: $primary-color;
+
+    @media (min-width: 768px) {
+        width: 40%;
+    }
+}
+
+h4 {
+    margin: 0;
+}
+
+%wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#tempWrapper {
+    margin: 19.92px 0;
+    @extend %wrapper;
+}
+
+#tempMinMaxWrapper {
+    font-size: map-get($font-sizes, "tiny");
+    opacity: 0.6;
+    filter: brightness(2);
+}
+
+#tempCurrent {
+    margin: 1px;
+    font-size: map-get($font-sizes, "large");
+    font-weight: bold;
+}
+
+#description {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+#tempFeelsLike {
+    margin: 4px 0;
+    font-size: map-get($font-sizes, "tiny");
+    font-weight: bold;
+    opacity: 0.6;
+    filter: brightness(2);
+}
+
+#panelsWrapper {
+    margin-top: 10px;
+    @extend %wrapper;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+%panel {
+    border-radius: 0.75em;
+    box-sizing: border-box;
+    background-color: $secondary-color;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex: 1 0 40%;
+    color: white;
+    padding: 10px;
+    height: 150px;
+}
+
+#panelsWrapper > * { // Select all children (panels) inside panelsWrapper
+    @extend %panel;
+
+    &:first-child {
+        font-size: map-get($font-sizes, "large");
+    }
+}
+
+#panelsWrapper > * > * { // Selects all elements inside each panel
+    margin: 0;
+}
+
+#refreshButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

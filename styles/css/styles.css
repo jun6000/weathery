@@ -1,0 +1,86 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, sans-serif;
+  color: #c7d6f0;
+  background-color: #304e88;
+}
+@media (min-width: 768px) {
+  body {
+    width: 40%;
+  }
+}
+
+h4 {
+  margin: 0;
+}
+
+#panelsWrapper, #tempWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+#tempWrapper {
+  margin: 19.92px 0;
+}
+
+#tempMinMaxWrapper {
+  font-size: 0.8em;
+  opacity: 0.6;
+  filter: brightness(2);
+}
+
+#tempCurrent {
+  margin: 1px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#description {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+#tempFeelsLike {
+  margin: 4px 0;
+  font-size: 0.8em;
+  font-weight: bold;
+  opacity: 0.6;
+  filter: brightness(2);
+}
+
+#panelsWrapper {
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#panelsWrapper > * {
+  border-radius: 0.75em;
+  box-sizing: border-box;
+  background-color: #182f57;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  flex: 1 0 40%;
+  color: white;
+  padding: 10px;
+  height: 150px;
+}
+
+#panelsWrapper > *:first-child {
+  font-size: 2em;
+}
+
+#panelsWrapper > * > * {
+  margin: 0;
+}
+
+#refreshButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*# sourceMappingURL=styles.css.map */
