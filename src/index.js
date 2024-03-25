@@ -1,4 +1,5 @@
 function populateWeatherData(data) {
+    $('#location').text(`${data.name}, ${data.sys.country}`);
     $('#tempCurrent').html(data.main.temp + '&deg;');
     let descText = data.weather[0].description;
     descText = descText.toLowerCase().replace(/\b[a-z]/g, function(letter) {
