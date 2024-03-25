@@ -10,19 +10,22 @@
         <link rel="stylesheet" href="./styles/css/styles.css">
     </head>
     <body>
-        <h2>Weather Dashboard</h2>
+        <div id="headerWrapper">
+            <h2>Weather Dashboard</h2>
+            <div id="location"></div>
+        </div>
         <div id="tempWrapper">
             <div id="tempOverview">
                 <h4>Now</h4>
-                <p id="tempCurrent">&deg;</p>
+                <p id="tempCurrent"></p>
                 <div id="tempMinMaxWrapper">
-                    <span id="maxTemp">High</span>
-                    <span id="minTemp">&bull; Low</span>
+                    <span id="maxTemp"></span>
+                    <span id="minTemp"></span>
                 </div>
             </div>
             <div id="feelsLikeOverview">
                 <p id="description"></p>
-                <p id="tempFeelsLike">Feels like</p>
+                <p id="tempFeelsLike"></p>
             </div>
         </div>
         <div id="generalOverview">
@@ -30,23 +33,23 @@
             <div id="panelsWrapper">
                 <div id="windPanel">
                     <p>Wind</p>
-                    <p id="windSpeed"></p>
-                    <p id="windDeg"></p>
+                    <p id="windSpeed"><span></span>&nbsp;kph</p>
+                    <p id="windDeg"><span></span></p>
                 </div>
                 <div id="humidityPanel">
                     <p>Humidity</p>
-                    <p id="humidity"></p>
+                    <p id="humidity"><span></span>&nbsp;%</p>
                 </div>
                 <div id="pressurePanel">
                     <p>Pressure</p>
-                    <p id="pressure"></p>
+                    <p id="pressure"><span></span>&nbsp;mBar</p>
                 </div>
                 <div id="visibilityPanel">
                     <p>Visibility</p>
-                    <p id="visibility"></p>
+                    <p id="visibility"><span></span>&nbsp;m</p>
                 </div>
             </div>
         </div>
-        <button id="refreshButton" type="button">Refresh</button>
+        <button id="refreshButton" type="button">Refresh Data</button>
     </body>
 </html>

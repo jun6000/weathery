@@ -72,7 +72,7 @@ h4 {
 }
 
 %panel {
-    border-radius: 0.75em;
+    border-radius: 1em;
     box-sizing: border-box;
     background-color: $secondary-color;
     display: flex;
@@ -80,24 +80,38 @@ h4 {
     justify-content: space-between;
     flex: 1 0 40%;
     color: white;
-    padding: 10px;
+    padding: 20px;
     height: 150px;
 }
 
 #panelsWrapper > * { // Select all children (panels) inside panelsWrapper
     @extend %panel;
-
-    &:first-child {
-        font-size: map-get($font-sizes, "large");
-    }
 }
 
 #panelsWrapper > * > * { // Selects all elements inside each panel
     margin: 0;
+    font-size: map-get($font-sizes, "tiny");
+
+    &:first-child {
+        font-weight: bold;
+    }
+
+    & > span {
+        font-size: map-get($font-sizes, "medium");
+    }
 }
 
 #refreshButton {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 16px auto;
+    border: 0;
+    border-radius: 1em;
+    width: 50%;
+    height: 40px;
+    color: white;
+    background-color: $secondary-color;
+
+    &:hover {
+        filter: brightness(1.2);
+    }
 }
