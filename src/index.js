@@ -22,6 +22,30 @@ function getDay(unixTimestamp) {
     return days[idx];
 }
 
+function getWeatherSymbol(weatherCode) {
+    let codeSrcMap = {
+        200: "../assets/" // Thunderstorm
+        300: "../assets/" // Drizzle
+        500: "../assets/" // Rain
+        600: "../assets/" // Snow
+        700: "../assets/" // Atmosphere
+        800: "../assets/" // Clear
+        801: "../assets/" // Clouds
+    };
+
+    // Identify weather
+    if (weatherCode != 800) {
+        if (weatherCode > 800)
+            weatherCode = 801;
+        else
+            weatherCode -= weatherCode % 100;
+    }
+
+    // Create img element to be returned
+    let symbolElement = $("<img>");
+    symbolElement.attr("src", 
+}
+
 function populateForecastData(data) {
     // Get one forecast entry per day
     let forecast = data.list,
@@ -43,7 +67,7 @@ function populateForecastData(data) {
 
         // Insert temp data
         $(row).find('td:last-child').html("<span>" + Math.round(list[tblIdx].main.temp_max) + "&deg;</span><span>/" + Math.round(list[tblIdx].main.temp_min) + "&deg;</span>");
-        // $(row).find('td:eq(1)').html
+        // $(row).find('td:eq(1)').html(
     });
 }
 
