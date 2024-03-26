@@ -16,8 +16,35 @@ function populateWeatherData(data) {
     $('#visibility span').text(data.visibility);
 }
 
+function getDay(unixTimestamp) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let idx = new Date(unixTimestamp * 1000).getDay();
+    return days[idx];
+}
+
 function populateForecastData(data) {
-    
+    // Get one forecast entry per day
+    let forecast = data.list,
+        currentDay = '',
+        list = [];
+
+    for (let i = 0; i < forecast.length; i++) {
+        let tmp = getDay(forecast[i].dt);
+        if (tmp != currentDay) {
+            list.push(forecast[i]);
+            currentDay = tmp;
+        }
+    };
+
+    $('table tr').each(function(tblIdx, row) {
+        // For today and tomorrow don't insert day
+        if (tblIdx > 1)
+            $(row).find('td:first-child').text(getDay(list[tblIdx].dt));
+
+        // Insert temp data
+        $(row).find('td:last-child').html("<span>" + Math.round(list[tblIdx].main.temp_max) + "&deg;</span><span>/" + Math.round(list[tblIdx].main.temp_min) + "&deg;</span>");
+        // $(row).find('td:eq(1)').html
+    });
 }
 
 function getWeatherData() {
@@ -49,6 +76,7 @@ function getForecastData() {
         },
         success: function(res) {
             console.log(res);
+            populateForecastData(res);
         },
         error: function(error) {
             alert("An error occured! Check console");

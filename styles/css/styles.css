@@ -1,13 +1,14 @@
 body {
   margin-left: auto;
   margin-right: auto;
+  padding: 0 15px;
   font-family: Arial, sans-serif;
   color: #c7d6f0;
   background-color: #304e88;
 }
-@media (min-width: 768px) {
+@media (min-width: 536px) {
   body {
-    width: 40%;
+    width: 35%;
   }
 }
 
@@ -37,7 +38,7 @@ h4 {
 }
 
 #tempWrapper {
-  margin: 19.92px 0;
+  margin-bottom: 19.92px;
 }
 
 #tempMinMaxWrapper {
@@ -63,6 +64,51 @@ h4 {
   font-weight: bold;
   opacity: 0.6;
   filter: brightness(2);
+}
+
+table {
+  margin: 10px 0;
+  width: 100%;
+  font-size: 1em;
+  color: white;
+  font-weight: 600;
+  border-collapse: collapse;
+}
+table tr {
+  border-bottom: 2px solid #304e88;
+  background-color: #182f57;
+}
+table tr td {
+  padding: 15px;
+}
+table tr td:first-child {
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+}
+table tr td:last-child {
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+}
+table tr:first-child td:first-child {
+  border-top-left-radius: 1em;
+}
+table tr:first-child td:last-child {
+  border-top-right-radius: 1em;
+}
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 1em;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 1em;
+}
+table tr td:last-child {
+  text-align: right;
+}
+table tr td:last-child > span:last-child {
+  color: #c7d6f0;
+}
+table tr:last-child {
+  border-bottom: none;
 }
 
 #panelsWrapper {

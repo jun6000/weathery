@@ -15,12 +15,13 @@ $secondary-color: #182f57;
 body {
     margin-left: auto;
     margin-right: auto;
+    padding: 0 15px;
     font-family: $font-stack;
     color: $font-color;
     background-color: $primary-color;
 
-    @media (min-width: 768px) {
-        width: 40%;
+    @media (min-width: 536px) {
+        width: 35%;
     }
 }
 
@@ -31,7 +32,10 @@ body {
 
     & > div:last-child {
         & > img {
-            filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg);
+            filter: invert(100%);
+            height: 16px;
+            width: auto;
+            vertical-align: -2px;
         }
 
         & > span {
@@ -51,7 +55,7 @@ h4 {
 }
 
 #tempWrapper {
-    margin: 19.92px 0;
+    margin-bottom: 19.92px;
     @extend %wrapper;
 }
 
@@ -78,6 +82,45 @@ h4 {
     font-weight: bold;
     opacity: 0.6;
     filter: brightness(2);
+}
+
+table {
+    margin: 10px 0;
+    width: 100%;
+    font-size: map-get($font-sizes, "small");
+    color: white;
+    font-weight: 600;
+
+    & tr {
+        background-color: $secondary-color;
+
+        & td {
+            padding: 15px;
+
+            &:nth-child(1) {
+                border-top-left-radius: 0.2em;
+                border-bottom-left-radius: 0.2em;
+            }
+
+            &:nth-child(3) {
+                border-top-right-radius: 0.2em;
+                border-bottom-right-radius: 0.2em;
+            }
+        }
+
+        &:first-child:first-child {
+            border-top-left-radius: 1em;
+        }
+
+        & td:last-child {
+            text-align: right;
+            
+            & > span:last-child {
+                color: $font-color;
+            }
+        }
+
+    }
 }
 
 #panelsWrapper {
