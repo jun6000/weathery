@@ -186,6 +186,11 @@ table {
 
 #panelsWrapper > * { // Select all children (panels) inside panelsWrapper
     @extend %panel;
+
+    & img {
+        display: block;
+        height: 60px;
+    }
 }
 
 #panelsWrapper > * > * { // Selects all elements inside each panel

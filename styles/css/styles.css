@@ -150,6 +150,11 @@ table tr:last-child {
   height: 150px;
 }
 
+#panelsWrapper > * img {
+  display: block;
+  height: 60px;
+}
+
 #panelsWrapper > * > * {
   margin: 0;
   font-size: 0.8em;

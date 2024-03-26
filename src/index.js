@@ -11,7 +11,6 @@ function populateWeatherData(data) {
     $('#minTemp').html('Low ' + data.main.temp_min + '&deg;');
     $('#tempFeelsLike').html('Feels like ' + data.main.feels_like + '&deg;');
     $('#windSpeed span').text(data.wind.speed);
-    $('#windDeg span').html(data.wind.deg + '&deg;');
     $('#humidity span').text(data.main.humidity);
     $('#pressure span').text(data.main.pressure);
     $('#visibility span').text(data.visibility);
@@ -118,13 +117,15 @@ $(document).ready(function() {
     getForecastData();
     getWeatherData();
 
-   /*  // Periodic refresh
+    // Periodic refresh
     let intervalId = setInterval(function() {
         getWeatherData();
-    }, 10000); */
+        getForecastData();
+    }, 10000);
 
     // Manual refresh
     $('#refreshButton').click(function() {
         getWeatherData();
+        getForecastData();
     });
 });
