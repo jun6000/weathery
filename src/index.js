@@ -1,6 +1,7 @@
 function populateWeatherData(data) {
     $('#location').text(`${data.name}, ${data.sys.country}`);
     $('#tempCurrent').html(data.main.temp + '&deg;');
+    $('#tempCurrentSymbol').replaceWith(getWeatherSymbol(data.weather[0].id));
     let descText = data.weather[0].description;
     descText = descText.toLowerCase().replace(/\b[a-z]/g, function(letter) {
         return letter.toUpperCase();
@@ -24,13 +25,13 @@ function getDay(unixTimestamp) {
 
 function getWeatherSymbol(weatherCode) {
     let codeSrcMap = {
-        200: "../assets/" // Thunderstorm
-        300: "../assets/" // Drizzle
-        500: "../assets/" // Rain
-        600: "../assets/" // Snow
-        700: "../assets/" // Atmosphere
-        800: "../assets/" // Clear
-        801: "../assets/" // Clouds
+        200: "./assets/storm-svgrepo-com.svg",                 // Thunderstorm
+        300: "./assets/drizzle-forecast-svgrepo-com.svg",      // Drizzle
+        500: "./assets/rain-forecast-svgrepo-com.svg",         // Rain
+        600: "./assets/snowflake-forecast-svgrepo-com.svg",    // Snow
+        700: "./assets/tornado-forecast-svgrepo-com.svg",      // Atmosphere
+        800: "./assets/sun-season-svgrepo-com.svg",            // Clear
+        801: "./assets/cloud-spring-svgrepo-com.svg"           // Clouds
     };
 
     // Identify weather
@@ -43,7 +44,10 @@ function getWeatherSymbol(weatherCode) {
 
     // Create img element to be returned
     let symbolElement = $("<img>");
-    symbolElement.attr("src", 
+    symbolElement.attr("src", codeSrcMap[weatherCode]);
+    symbolElement.addClass("weatherSymbol");
+
+    return symbolElement;
 }
 
 function populateForecastData(data) {
@@ -67,7 +71,7 @@ function populateForecastData(data) {
 
         // Insert temp data
         $(row).find('td:last-child').html("<span>" + Math.round(list[tblIdx].main.temp_max) + "&deg;</span><span>/" + Math.round(list[tblIdx].main.temp_min) + "&deg;</span>");
-        // $(row).find('td:eq(1)').html(
+        $(row).find('td:eq(1)').html(getWeatherSymbol(list[tblIdx].weather[0].id));
     });
 }
 

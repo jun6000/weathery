@@ -6,23 +6,35 @@ $font-sizes: (
     "small": 1em,
     "medium": 1.4em,
     "large": 2em,
+    "huge": 2.5em,
 );
 $font-color: #c7d6f0;
 
 $primary-color: #304e88;
 $secondary-color: #182f57;
 
+html {
+    background-color: #0c082e;
+    height: 100%;
+}
+
 body {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     padding: 0 15px;
+    padding-bottom: 1px;
     font-family: $font-stack;
     color: $font-color;
     background-color: $primary-color;
+    box-sizing: border-box;
 
     @media (min-width: 536px) {
         width: 35%;
     }
+}
+
+img {
+    width: auto;
+    vertical-align: -4px;
 }
 
 #headerWrapper {
@@ -32,14 +44,15 @@ body {
 
     & > div:last-child {
         & > img {
-            filter: invert(100%);
             height: 16px;
-            width: auto;
+            filter: invert(100%);
             vertical-align: -2px;
         }
 
         & > span {
             font-size: map-get($font-sizes, "small");
+            font-weight: 600;
+            padding-left: 2px;
         }
     }
 }
@@ -67,9 +80,15 @@ h4 {
 
 #tempCurrent {
     margin: 1px;
-    font-size: map-get($font-sizes, "large");
+    font-size: map-get($font-sizes, "huge");
     font-weight: bold;
+
+    & + img {
+        padding-left: 2px;
+        height: 36px;
+    }
 }
+
 
 #description {
     margin-bottom: 0;
@@ -139,6 +158,10 @@ table {
     & tr:last-child {
         border-bottom: none;
     }
+}
+
+.weatherSymbol {
+    height: 20px;
 }
 
 #panelsWrapper {
