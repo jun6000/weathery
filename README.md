@@ -2,7 +2,7 @@
 
 A weather dashboard heavily inspired by the Google Weather mobile app. Uses the [OpenWeatherMap API](https://openweathermap.org/guide) under the hood.
 
-Check it out [here]()
+Check it out [here](https://weathery-red.vercel.app/).
 
 ### Features
 - Current weather
