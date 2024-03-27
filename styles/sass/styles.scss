@@ -31,6 +31,10 @@ body {
     width: 40%;
     min-width: 327px;
     max-width: 425px;
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+    }
 }
 
 img {

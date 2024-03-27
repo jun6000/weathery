@@ -17,6 +17,11 @@ body {
   min-width: 327px;
   max-width: 425px;
 }
+@media screen and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+}
 
 img {
   width: auto;
