@@ -128,4 +128,9 @@ $(document).ready(function() {
         getWeatherData();
         getForecastData();
     });
+
+    // Disable dragging images
+    $(document).on("mouseenter", "img", function() {
+        $(this).attr("draggable", false);
+    });
 });
